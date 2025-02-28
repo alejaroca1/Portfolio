@@ -1,0 +1,69 @@
+---
+import "@fontsource/alfa-slab-one";
+---
+
+<header class="flex justify-between items-center px-6 py-4 w-full max-w-6xl mx-auto">
+  <h1 class="text-3xl font-bold font-['Alfa_Slab_One'] text-blue-700">
+    Alejandra Rodríguez
+  </h1>
+
+  <nav class="hidden md:flex gap-x-8">
+    <a href="#" class="nav-link">Inicio</a>
+    <a href="#sobre-mi" class="nav-link">Sobre Mí</a>
+    <a href="#experiencia" class="nav-link">Experiencia</a>
+    <a href="#contacto" class="nav-link">Contáctame</a>
+  </nav>
+
+  <button id="menu-btn" class="md:hidden text-black-700 text-3xl">
+    ☰
+  </button>
+
+  <div id="mobile-menu" class="absolute top-16 right-6 bg-white shadow-lg rounded-lg p-4 flex flex-col gap-4 hidden md:hidden">
+    <a href="#" class="nav-link">Inicio</a>
+    <a href="#sobre-mi" class="nav-link">Sobre Mí</a>
+    <a href="#experiencia" class="nav-link">Experiencia</a>
+    <a href="#contacto" class="nav-link">Contáctame</a>
+  </div>
+</header>
+
+<style is:global>
+  .nav-link {
+    position: relative;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: #2563eb;
+  }
+  
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 50%;
+    background-color: #2563eb;
+    transition: width 0.3s ease, left 0.3s ease;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+    left: 0;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  });
+</script>
