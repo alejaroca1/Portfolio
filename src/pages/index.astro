@@ -14,51 +14,62 @@ import ContruccionAlert from '../components/Construccion.astro'
 
 <Layout title="Portfolio de Alejandra - Project Product Manager Junior" description="Portafolio para contratación para Alejandra, apasionada por el desarrollo web y sus alternativas para crear soluciones.">
 	<main class="px-10">
-		<SectionContainer>
+		<SectionContainer customWidth="lg:w-[750px]">
 			<ContruccionAlert />
 		</SectionContainer>
 
-		<SectionContainer class="py-10 pb-30">
-		<img 
-		src="profile_photo.jpg" 
-		alt="Profile photo"
-		class="rounded-full w-30 h-30">
-
-		<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-4 justify-center">¡Hola! Soy Alejandra 
-			<div class="flex justify-center items-center">
-			<a href="https://www.linkedin.com/in/alejandrarodriguezcal/" 
-				target="_blank" 
-				rel="noopener">
-				<Badge>Disponible para trabajo</Badge>
-			</a>
-			
-		</div></h1>
-		<h2 class="text-xl opacity-80 text-wrap max-w-[700px]">Fullstack Web Developer - Project Manager</h2>
-		<span class="text-wrap max-w-[700px]">Apasionada del desarrollo web y la gestión de proyectos tecnológicos. Con experiencia en e-commerce, marketing digital y liderazgo de equipos en tecnología, he desarrollado habilidades clave en frontend, backend, análisis de datos y metodologías ágiles.
-		Actualmente, estoy perfeccionando mis conocimientos en Fullstack Development en Coderhouse, combinando mi visión estratégica con habilidades técnicas para crear soluciones digitales innovadoras. De Bogotá, Colombia.</span>
-
-			<nav class="flex gap-x-2 mt-3">
-				<SocialPill href="https://www.linkedin.com/in/alejandrarodriguezcal/">
-					<LinkedInIcon class="size-6"/>
-					LinkedIn
-				</SocialPill>
-
-				<SocialPill  href="https://github.com/alejaroca1">
-					<GitHubIcon class="size-6"/>
-					GitHub
-				</SocialPill>
-
-				<SocialPill  href="https://mail.google.com/mail/?view=cm&fs=1&to=alejaroca1@gmail.com">
-					<MailIcon class="size-6"/>
-					alejaroca1@gmail.com
-				</SocialPill>
-
-				<SocialPill  href="https://docs.google.com/document/d/1wp9ViSzirm5GCYIrHxZRGybRuE5vSuQUDIFbZR5QgTI/edit?usp=sharing">
-					<CVIcon class="size-6"/>
-					Descarga mi CV
-				</SocialPill>
-			</nav>
+		<SectionContainer class="flex flex-col md:flex-row items-center gap-10 pb-20 pt-10 text-center md:text-left" customWidth="lg:w-[1000px]">
+			<img 
+				src="profile_photo.jpg" 
+				alt="Profile photo"
+				class="rounded-full size-40 md:size-50 lg:size-60"
+			>
+		
+			<div>
+				<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-4 justify-center md:justify-start">
+					¡Hola! Soy Alejandra
+					<div class="flex justify-center items-center">
+						<a href="https://www.linkedin.com/in/alejandrarodriguezcal/" 
+							target="_blank" 
+							rel="noopener">
+							<Badge>Disponible para trabajo</Badge>
+						</a>
+					</div>
+				</h1>
+		  
+				<h2 class="text-xl opacity-80 max-w-[700px]">Fullstack Web Developer - Project Manager</h2>
+				
+				<p class="max-w-[700px]">
+				  Apasionada del desarrollo web y la gestión de proyectos tecnológicos. Con experiencia en e-commerce, marketing digital y liderazgo de equipos en tecnología, he desarrollado habilidades clave en frontend, backend, análisis de datos y metodologías ágiles.
+				  Actualmente, estoy perfeccionando mis conocimientos en Fullstack Development en Coderhouse, combinando mi visión estratégica con habilidades técnicas para crear soluciones digitales innovadoras. De Bogotá, Colombia.
+				</p>
+		  
+				<!-- Redes sociales -->
+				<nav class="flex flex-wrap gap-2 mt-3 justify-center md:justify-start">
+					<SocialPill href="https://www.linkedin.com/in/alejandrarodriguezcal/">
+						<LinkedInIcon class="size-6"/>
+						LinkedIn
+					</SocialPill>
+		
+					<SocialPill href="https://github.com/alejaroca1">
+						<GitHubIcon class="size-6"/>
+						GitHub
+					</SocialPill>
+		
+					<SocialPill href="https://mail.google.com/mail/?view=cm&fs=1&to=alejaroca1@gmail.com">
+						<MailIcon class="size-6"/>
+						alejaroca1@gmail.com
+					</SocialPill>
+		
+					<SocialPill href="https://docs.google.com/document/d/1wp9ViSzirm5GCYIrHxZRGybRuE5vSuQUDIFbZR5QgTI/edit?usp=sharing">
+						<CVIcon class="size-6"/>
+						Descarga mi CV
+					</SocialPill>
+				</nav>
+			</div>
 		</SectionContainer>
+		
+		  
 		
 		<SectionContainer id="experiencia">
 			<h2 class="text-2xl font-bold mb-6 flex gap-x-3">

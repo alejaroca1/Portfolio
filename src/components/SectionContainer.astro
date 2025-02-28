@@ -1,7 +1,8 @@
 ---
-const { class: className = '', id } = Astro.props;
+const { class: className = '', id, customWidth } = Astro.props;
+const widthClass = customWidth ? customWidth : 'lg:w-[900px]'
 ---
 
-<section id={id} class={`w-full lg:w-[740px] mx-auto ${className}`}>
+<section id={id} class={`w-full ${widthClass} mx-auto ${className}`}>
     <slot />
 </section>
