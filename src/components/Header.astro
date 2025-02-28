@@ -2,10 +2,27 @@
 import "@fontsource/alfa-slab-one";
 ---
 
-<header class="flex justify-between items-center px-6 py-4 w-full max-w-6xl mx-auto">
-  <h1 class="text-3xl font-bold font-['Alfa_Slab_One'] text-blue-700">
-    Alejandra Rodríguez
-  </h1>
+<header class="flex justify-between items-center px-6 py-6 w-full max-w-6xl mx-auto">
+  
+    <h1 class="relative text-3xl font-bold font-['Alfa_Slab_One'] text-black transition-all duration-300 hover:translate-y-[-2px] after:content-[''] after:absolute after:w-0 after:h-[2px] after:bottom-[-3px] after:left-1/2 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0">
+        Alejandra Rodríguez
+      </h1>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const texto = "AlejandraRodriguez.dev";
+      let index = 0;
+      function escribirTexto() {
+        if (index < texto.length) {
+          document.getElementById("nombre").innerHTML += texto[index];
+          index++;
+          setTimeout(escribirTexto, 100); 
+        }
+      }
+      escribirTexto();
+    });
+  </script>
+
 
   <nav class="hidden md:flex gap-x-8">
     <a href="#" class="nav-link">Inicio</a>
@@ -14,7 +31,8 @@ import "@fontsource/alfa-slab-one";
     <a href="#contacto" class="nav-link">Contáctame</a>
   </nav>
 
-  <button id="menu-btn" class="md:hidden text-black-700 text-3xl">
+
+  <button id="menu-btn" class="md:hidden text-blue-700 text-3xl">
     ☰
   </button>
 
@@ -32,7 +50,7 @@ import "@fontsource/alfa-slab-one";
     font-size: 1rem;
     font-weight: 600;
     text-decoration: none;
-    color: black;
+    color: #1e3a8a;
     transition: color 0.3s;
   }
   
@@ -57,11 +75,13 @@ import "@fontsource/alfa-slab-one";
   }
 </style>
 
+
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const menuBtn = document.getElementById("menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
 
+    
     menuBtn.addEventListener("click", () => {
       mobileMenu.classList.toggle("hidden");
     });
