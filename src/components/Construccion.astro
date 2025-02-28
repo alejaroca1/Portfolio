@@ -1,0 +1,22 @@
+<div id="alert" class="flex flex-col gap-2 p-4 text-sm border-blue-500 text-blue-700 bg-blue-200 rounded-lg shadow-md alert_component" role="alert">
+    <div class="flex items-center">
+      <div>
+        <span class="ml-4 mr-1 font-medium block">
+          🚧 <strong>¡Este sitio web sigue en construcción!</strong> 🚧 <br>
+          Si tienes alguna pregunta, puedes <a href="https://mail.google.com/mail/?view=cm&fs=1&to=alejaroca1@gmail.com" class="underline font-semibold hover:text-blue-900">contactarme</a> o <a href="https://calendar.app.google/jvVKkhAoUoafQF2s9" target="_blank" class="underline font-semibold hover:text-blue-900">agendar una cita</a>.
+        </span>
+      </div>
+      <button id="close-alert" aria-label="Cerrar" class="-m-1.5 ml-auto inline-flex h-8 w-8 rounded-lg p-1.5 focus:ring-2 bg-blue-300 text-blue-700 hover:bg-blue-400 focus:ring-blue-500" type="button">
+        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  
+  <script>
+    document.getElementById("close-alert").addEventListener("click", function() {
+      document.getElementById("alert").style.display = "none";
+    });
+  </script>
+  

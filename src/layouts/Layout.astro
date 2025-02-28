@@ -32,6 +32,25 @@ const { description, title } = Astro.props
 		<slot />
 		<Footer />
 
+		<div id="custom-cursor">
+			<div id="cursor-inner"></div>
+		</div>
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+			  const cursor = document.getElementById("custom-cursor");
+			  const cursorInner = document.getElementById("cursor-inner");
+		  
+			  document.addEventListener("mousemove", (e) => {
+				cursor.style.opacity = 1;
+				cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+			  });
+		  
+			  document.addEventListener("mouseleave", () => {
+				cursor.style.opacity = 0;
+			  });
+			});
+		  </script>
+		  
 	</body>
 </html>
 
@@ -58,5 +77,33 @@ const { description, title } = Astro.props
 			scroll-behavior: auto;
 		}
 	}
+
+	#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease-out;
+  z-index: 9999;
+}
+
+#cursor-inner {
+  width: 12px;
+  height: 12px;
+  background: rgba(59, 130, 246, 0.8); /* Color azul con opacidad */
+  border-radius: 50%;
+  transition: width 0.2s, height 0.2s, background 0.2s;
+}
+
+a:hover ~ #custom-cursor #cursor-inner,
+button:hover ~ #custom-cursor #cursor-inner {
+  width: 25px;
+  height: 25px;
+  background: rgba(37, 99, 235, 0.8);
+}
+
 
 </style>
