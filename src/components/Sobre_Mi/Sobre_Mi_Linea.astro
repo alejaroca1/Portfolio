@@ -1,0 +1,27 @@
+---
+const TIMELINE = [
+  {
+    title: "Pasado",
+    description: "Mi camino comenzó en el mundo del ecommerce y marketing digital. Fundé Kanwee, una tienda en línea, y aprendí a gestionar productos, crear campañas publicitarias y analizar datos. También desarrollé habilidades en atención al cliente y optimización de ventas en plataformas como Mercado Libre y Facebook Marketplace.",
+  },
+  {
+    title: "Presente",
+    description: "Actualmente, estoy especializándome en desarrollo web full stack con Coderhouse. Mi enfoque está en React y Node.js, y he estado trabajando en mi portafolio para destacar mis habilidades técnicas. Además, sigo perfeccionando mi experiencia en gestión de productos digitales y dirección de proyectos tecnológicos.",
+  },
+  {
+    title: "Futuro",
+    description: "Mi objetivo es consolidarme como desarrolladora web y directora de proyectos tecnológicos. Quiero trabajar en empresas innovadoras donde pueda aplicar mis conocimientos en frontend, backend y gestión de equipos, contribuyendo al desarrollo de productos digitales impactantes.",
+  }
+];
+---
+
+<section class="w-full max-w-5xl mx-auto py-5 px-6">
+  <div class="grid md:grid-cols-3 gap-6">
+    {TIMELINE.map((item, index) => (
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105" key={index}>
+        <h3 class="text-2xl font-bold text-center mb-3 text-blue-500">{item.title}</h3>
+        <p class="dark:text-gray-300 text-center">{item.description}</p>
+      </div>
+    ))}
+  </div>
+</section>

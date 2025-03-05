@@ -1,0 +1,46 @@
+---
+import HabilidadesPill from "../Sobre_Mi/HabilidadesPill.astro";
+---
+
+<div class="relative w-full py-6 overflow-hidden">
+    
+    <div class="flex whitespace-nowrap animate-scroll">
+        <div class="flex space-x-4 px-3 habilidades-container">
+            {[
+                "Metodologías ágiles", "Power BI", "Excel", "SQL", "Organización", "Liderazgo", 
+                "Coordinación de proyectos", "SCRUM", "Estrategia", "E-commerce", "HTML/CSS", 
+                "JavaScript", "React", "Node.js", "Desarrollo Backend", "APIs", "Postman"
+            ].map((habilidad) => (
+                <HabilidadesPill text={habilidad} />
+            ))}
+        </div>
+        <div class="flex space-x-4 px-3 habilidades-container">
+            {[
+                "Metodologías ágiles", "Power BI", "Excel", "SQL", "Organización", "Liderazgo", 
+                "Coordinación de proyectos", "SCRUM", "Estrategia", "E-commerce", "HTML/CSS", 
+                "JavaScript", "React", "Node.js", "Desarrollo Backend", "APIs", "Postman"
+            ].map((habilidad) => (
+                <HabilidadesPill text={habilidad} />
+            ))}
+        </div>
+    </div>
+</div>
+
+<style>
+    @keyframes scroll {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+    }
+    
+    .animate-scroll {
+        display: flex;
+        width: max-content;
+        animation: scroll 20s linear infinite;
+    }
+
+    .habilidades-container {
+        display: flex;
+        gap: 1rem;
+        flex-shrink: 0;
+    }
+</style>
