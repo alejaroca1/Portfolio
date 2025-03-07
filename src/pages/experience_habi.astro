@@ -1,7 +1,17 @@
 ---
+import Badge from '../components/Badge.astro'
 import Layout from '../layouts/Layout.astro'
+import LinkedInIcon from '../components/icons/LinkedIn.astro'
+import GitHubIcon from '../components/icons/GitHub.astro'
+import SocialPill from '../components/SocialPill.astro'
+import MailIcon from '../components/icons/Mail.astro'
+import CVIcon from '../components/icons/CV.astro'
+import Experience from '../components/Experience.astro'
 import SectionContainer from '../components/SectionContainer.astro'
+import SuitCaseItem from '../components/icons/SuitCase.astro'
+import PersonaItem from '../components/icons/Persona.astro'
 import ContruccionAlert from '../components/Construccion.astro'
+import SobreMi from '../components/Sobre_Mi/SobreMi.astro'
 ---
 
 <Layout title="Portfolio de Alejandra - Project Product Manager Junior" description="Portafolio para contratación para Alejandra, apasionada por el desarrollo web y sus alternativas para crear soluciones.">
@@ -10,5 +20,76 @@ import ContruccionAlert from '../components/Construccion.astro'
 			<ContruccionAlert />
 		</SectionContainer>
 
+		<SectionContainer 
+			class="flex flex-col md:flex-row items-center gap-10 pb-20 pt-20 text-center md:text-left" 
+			customWidth="lg:w-[1000px]">
+
+			<img 
+				src="profile_photo.jpg" 
+				alt="Profile photo"
+				class="rounded-full size-40 md:size-50 lg:size-60"
+			>
+		
+			<div>
+				<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold flex flex-col md:flex-row gap-2 md:gap-4 pb-4 text-center md:text-left leading-none">
+					¡Hola! Soy Alejandra
+					<div class="d-flex align-items-center">
+						<a href="https://www.linkedin.com/in/alejandrarodriguezcal/" 
+							target="_blank" 
+							rel="noopener">
+							<Badge>Disponible para trabajo</Badge>
+						</a>
+					</div>
+				</h1>
+		  
+				<h2 class="text-xl opacity-80 max-w-[700px] pb-5">
+					Fullstack Web Developer - Project Manager
+				</h2>
+				
+				<p class="max-w-[700px] text-xl text-justify" >
+				  	Apasionada del <strong>desarrollo web y la gestión de proyectos tecnológicos</strong>. Con experiencia en e-commerce, marketing digital y liderazgo de equipos en tecnología, he desarrollado habilidades clave en frontend, backend, análisis de datos y metodologías ágiles.
+				  	Actualmente, estoy perfeccionando mis conocimientos en Fullstack Development en Coderhouse, combinando mi <strong>visión estratégica con habilidades técnicas para crear soluciones digitales innovadoras.</strong> <br>De Bogotá, Colombia.
+				</p>
+		  
+				<nav class="flex flex-wrap gap-2 mt-3 justify-center md:justify-start">
+					<SocialPill href="https://www.linkedin.com/in/alejandrarodriguezcal/">
+						<LinkedInIcon class="size-6"/>
+						LinkedIn
+					</SocialPill>
+		
+					<SocialPill href="https://github.com/alejaroca1">
+						<GitHubIcon class="size-6"/>
+						GitHub
+					</SocialPill>
+		
+					<SocialPill href="https://mail.google.com/mail/?view=cm&fs=1&to=alejaroca1@gmail.com">
+						<MailIcon class="size-6"/>
+						alejaroca1@gmail.com
+					</SocialPill>
+		
+					<SocialPill href="https://docs.google.com/document/d/1wp9ViSzirm5GCYIrHxZRGybRuE5vSuQUDIFbZR5QgTI/edit?usp=sharing">
+						<CVIcon class="size-6"/>
+						Descarga mi CV
+					</SocialPill>
+				</nav>
+			</div>
+			
+		</SectionContainer>
+
+		<SectionContainer id="sobre_mi">
+			<h2 class="text-2xl font-bold flex gap-x-3">
+				<PersonaItem class="size-8"/>
+				Sobre mí
+			</h2>
+			<SobreMi />
+		</SectionContainer>
+		
+		<SectionContainer id="experiencia" class="pt-15">
+			<h2 class="text-2xl font-bold mb-6 flex gap-x-3">
+				<SuitCaseItem class="size-8"/>
+				Experiencia Laboral
+			</h2>
+			<Experience />
+		</SectionContainer>
 	</main>
 </Layout>

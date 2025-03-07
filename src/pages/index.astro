@@ -1,95 +1,91 @@
 ---
-import Badge from '../components/Badge.astro'
-import Layout from '../layouts/Layout.astro'
-import LinkedInIcon from '../components/icons/LinkedIn.astro'
-import GitHubIcon from '../components/icons/GitHub.astro'
-import SocialPill from '../components/SocialPill.astro'
-import MailIcon from '../components/icons/Mail.astro'
-import CVIcon from '../components/icons/CV.astro'
-import Experience from '../components/Experience.astro'
-import SectionContainer from '../components/SectionContainer.astro'
-import SuitCaseItem from '../components/icons/SuitCase.astro'
-import PersonaItem from '../components/icons/Persona.astro'
-import ContruccionAlert from '../components/Construccion.astro'
-import SobreMi from '../components/Sobre_Mi/SobreMi.astro'
+import LayoutSinHeaderFooter from '../layouts/LayoutSinHeaderFooter.astro'
 ---
 
-<Layout title="Portfolio de Alejandra - Project Product Manager Junior" description="Portafolio para contratación para Alejandra, apasionada por el desarrollo web y sus alternativas para crear soluciones.">
-	<main class="px-10">
-		<SectionContainer customWidth="lg:w-[750px]">
-			<ContruccionAlert />
-		</SectionContainer>
+<LayoutSinHeaderFooter title="Portfolio de Alejandra - Multitask Tech" description="Portfolio de Alejandra Rodríguez Calderón - Desarrolladora, Project Manager, Data Engineer y más.">
+  <main class="flex flex-col items-center text-center px-5 py-20">
 
-		<SectionContainer 
-			class="flex flex-col md:flex-row items-center gap-10 pb-20 pt-20 text-center md:text-left" 
-			customWidth="lg:w-[1000px]">
+	<h1 id="typewriter-text" class="text-3xl md:text-4xl lg:text-5xl font-bold  leading-none text-center max-w-[1000px]">
+		<span id="typewriter"></span>
+		<span class="blinking-cursor">|</span>
+	</h1>
 
-			<img 
-				src="profile_photo.jpg" 
-				alt="Profile photo"
-				class="rounded-full size-40 md:size-50 lg:size-60"
-			>
-		
-			<div>
-				<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold flex flex-col md:flex-row gap-2 md:gap-4 pb-4 text-center md:text-left leading-none">
-					¡Hola! Soy Alejandra
-					<div class="d-flex align-items-center">
-						<a href="https://www.linkedin.com/in/alejandrarodriguezcal/" 
-							target="_blank" 
-							rel="noopener">
-							<Badge>Disponible para trabajo</Badge>
-						</a>
-					</div>
-				</h1>
-		  
-				<h2 class="text-xl opacity-80 max-w-[700px] pb-5">
-					Fullstack Web Developer - Project Manager
-				</h2>
-				
-				<p class="max-w-[700px] text-xl text-justify" >
-				  	Apasionada del <strong>desarrollo web y la gestión de proyectos tecnológicos</strong>. Con experiencia en e-commerce, marketing digital y liderazgo de equipos en tecnología, he desarrollado habilidades clave en frontend, backend, análisis de datos y metodologías ágiles.
-				  	Actualmente, estoy perfeccionando mis conocimientos en Fullstack Development en Coderhouse, combinando mi <strong>visión estratégica con habilidades técnicas para crear soluciones digitales innovadoras.</strong> <br>De Bogotá, Colombia.
-				</p>
-		  
-				<nav class="flex flex-wrap gap-2 mt-3 justify-center md:justify-start">
-					<SocialPill href="https://www.linkedin.com/in/alejandrarodriguezcal/">
-						<LinkedInIcon class="size-6"/>
-						LinkedIn
-					</SocialPill>
-		
-					<SocialPill href="https://github.com/alejaroca1">
-						<GitHubIcon class="size-6"/>
-						GitHub
-					</SocialPill>
-		
-					<SocialPill href="https://mail.google.com/mail/?view=cm&fs=1&to=alejaroca1@gmail.com">
-						<MailIcon class="size-6"/>
-						alejaroca1@gmail.com
-					</SocialPill>
-		
-					<SocialPill href="https://docs.google.com/document/d/1wp9ViSzirm5GCYIrHxZRGybRuE5vSuQUDIFbZR5QgTI/edit?usp=sharing">
-						<CVIcon class="size-6"/>
-						Descarga mi CV
-					</SocialPill>
-				</nav>
-			</div>
-			
-		</SectionContainer>
+	  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10 max-w-5xl w-full text-lg">
+		<a href="/" class="role-card">
+		  <h2 class="font-bold">💻 Desarrolladora Web Fullstack</h2>
+		  <p>Frontend, Backend, APIs y más.</p>
+		</a>
+		<a href="/" class="role-card">
+		  <h2 class="font-bold">📊 Data Engineer</h2>
+		  <p>ETL, Big Data y análisis de datos.</p>
+		</a>
+		<a href="/" class="role-card">
+		  <h2 class="font-bold">📌 Project/Product Manager</h2>
+		  <p>Metodologías ágiles y gestión de equipos.</p>
+		</a>
+		<a href="/" class="role-card">
+		  <h2 class="font-bold">🛠 "El parche de cualquier equipo"</h2>
+		  <p>¿Necesitas algo más? Seguro lo aprendo.</p>
+		</a>
+	  </div>
 
-		<SectionContainer id="sobre_mi">
-			<h2 class="text-2xl font-bold flex gap-x-3">
-				<PersonaItem class="size-8"/>
-				Sobre mí
-			</h2>
-			<SobreMi />
-		</SectionContainer>
-		
-		<SectionContainer id="experiencia" class="pt-15">
-			<h2 class="text-2xl font-bold mb-6 flex gap-x-3">
-				<SuitCaseItem class="size-8"/>
-				Experiencia Laboral
-			</h2>
-			<Experience />
-		</SectionContainer>
+	  <script>
+		document.addEventListener("DOMContentLoaded", function () {
+		  const text = "¡Hola! Soy Alejandra, la versión tech de una Barbie \"lo hago todo\": desarrollo, gestiono proyectos, analizo datos… y hasta arreglo la impresora si hace falta.\n¿En qué te ayudo hoy? 🚀";
+		  const speed = 50;
+		  let i = 0;
+	  
+		  function typeWriter() {
+			if (i < text.length) {
+			  if (text.charAt(i) === "\n") {
+				document.getElementById("typewriter").innerHTML += "<br><br>";
+			  } else {
+				document.getElementById("typewriter").innerHTML += text.charAt(i);
+			  }
+			  i++;
+			  setTimeout(typeWriter, speed);
+			}
+		  }
+	  
+		  typeWriter();
+		});
+	  </script>
+
 	</main>
-</Layout>
+
+</LayoutSinHeaderFooter>
+
+<style>
+.role-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background: #f3f4f6;
+  border-radius: 16px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+}
+
+.role-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0px 10px 14px rgba(0, 0, 0, 0.2);
+  background: #e5e7eb;
+}
+
+.blinking-cursor {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: black;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+</style>
